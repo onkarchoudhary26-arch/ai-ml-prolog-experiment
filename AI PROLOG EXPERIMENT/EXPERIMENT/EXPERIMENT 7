@@ -1,0 +1,19 @@
+% Road connections
+
+road(delhi,agra).
+road(agra,gwalior).
+road(gwalior,bhopal).
+road(bhopal,jaipur).
+road(jaipur,ajmer).
+road(delhi,jaipur).
+
+% Direct route
+
+route(X,Y) :-
+    road(X,Y).
+
+% Indirect route (recursive)
+
+route(X,Y) :-
+    road(X,Z),
+    route(Z,Y).
